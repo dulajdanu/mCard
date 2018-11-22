@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1538808782 source:c:\users\dell\desktop\babiii\exerise\ieee\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

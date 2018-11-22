@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1539518721 source:c:\users\dell\desktop\c++ game\gamec++\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<conio.h>
+	<windows.h>
+	<unistd.h>
+

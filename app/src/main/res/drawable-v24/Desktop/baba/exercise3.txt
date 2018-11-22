@@ -1,0 +1,78 @@
+#include<iostream>
+#include<new>
+#include<math.h>
+using namespace std;
+#define pi 22/7
+
+double detorad(double r) {
+	return r*pi / 180;
+}
+
+//double*y=tan
+double len1(double*x,double*y,double n,double r,double l) {
+	for (int k = 0; k <= r; k++) {
+		if (x[k] == n) {
+			double length1 = (l*y[k]);
+			return length1;
+		}
+	}
+}
+//double*y=sin  double*z=tan
+double len2(double*x,double*y,double*z,double m,double r,double l) {
+	double ang1, ang2;
+	
+	for (int k = 0; k <= r; k++) {
+		if (x[k] == m) {
+			ang1 = y[k];
+			ang2 = z[k];
+		}
+		
+	}
+	double length2 = (l*ang2)/ang1;
+	return length2;
+}
+
+
+
+
+
+int main() {
+	double y = (-89.75);
+	double angle[1000];
+	double sinusodial[1000];
+	double tangent[1000];
+	const int a = 10;
+	int size = 718;
+	double val1,val2;
+	double fval;
+	double rope;
+	double len_a1=0;
+	double len_a2=0;
+
+	for (int x = 0; x <= size ;  x++) {
+		angle[x] = y;
+		sinusodial[x] = sin(detorad(y));
+		tangent[x] = tan(detorad(y));
+		y =y+ 0.25;
+		//cout << angle[x]<<"\t \t" << sinusodial[x] << "\t \t" << tangent[x]<< endl;
+	}
+	cout << "Enter the distance between buildings:";
+	cin >> rope;
+	cout << "Enter the ANGLES OF ALFA & BETA:";
+	cin >> val1>>val2;
+	
+	//cal(angle, sinusodial, tangent,val,size);
+	len_a1 = len1(angle, tangent, val2, size, rope);
+	len_a2 = len2(angle, sinusodial,tangent, val1, size, rope);
+
+	
+	
+	fval = sqrt(pow(len_a1, 2) + pow(len_a2, 2) - (2 * sin(detorad(val1))*len_a1*len_a2));
+	cout << "\n \n \n";
+	cout << "Length Of the rope is:" << fval<<endl;
+	
+	cin.get();
+	cin.get();
+	
+}
+
