@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
     private Button signoutb;
     private Button testBtn;
 
+    private Button mailButn;
+
     private FirebaseAuth mFireBaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private static final int RC_SIGN_IN = 123;
@@ -82,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         scanButton  = findViewById(R.id.scanButton);
         textView = findViewById(R.id.mainText);
         newStdentButton = findViewById(R.id.newStudent);
+        mailButn = findViewById(R.id.Mailbutton);
 
         mFireBaseAuth = FirebaseAuth.getInstance();
 
@@ -176,6 +179,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
     }
 
     public void checkAbsent()
@@ -241,6 +246,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+    }
+
+
+    public void sendMailTo()
+    {
 
     }
 
